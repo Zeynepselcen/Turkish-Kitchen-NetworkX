@@ -8,6 +8,7 @@ with open(file_path, "r", encoding="utf-8") as file:
 
 G = nx.Graph()
 
+
 if isinstance(data.get("nodes"), list):
     for yemek in data["nodes"]:
         if isinstance(yemek, dict):  
