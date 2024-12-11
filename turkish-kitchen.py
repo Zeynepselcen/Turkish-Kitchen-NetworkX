@@ -81,3 +81,90 @@ nx.draw(
 )
 plt.title("Türk Mutfağı Yemek Grafiği")
 plt.show()
+
+# DERECE DAGİLİMİ NE ISE YARAR
+# Ne İşe Yarar?: Yemeklerin komşu sayılarının (derece) dağılımını görürsünüz. Hangi yemeklerin daha merkezi olduğunu veya popüler olduğunu anlamak için kullanılabilir.
+degrees = [degree for _, degree in G.degree()]
+plt.hist(degrees, bins=range(1, max(degrees) + 2), align='left', color='skyblue', edgecolor='black')
+plt.title("Düğüm Dereceleri Dağılımı")
+plt.xlabel("Komşu Sayısı (Derece)")
+plt.ylabel("Düğüm Sayısı")
+plt.show()
+
+# Kümeleme Katsayısı (Clustering Coefficient)
+# Ne İşe Yarar?: Her yemeğin, komşuları arasındaki bağlantıların ne kadar yoğun olduğunu gösterir. Komşu yemeklerin ne kadar birbirine benzediğini anlamak için kullanılabilir.
+
+clustering = nx.clustering(G)  # Her düğüm için kümeleme katsayısı
+average_clustering = nx.average_clustering(G)  # Tüm grafın ortalama kümeleme katsayısı
+print(f"Ortalama Kümeleme Katsayısı: {average_clustering}")
+
+# En yüksek kümeleme katsayısına sahip 5 düğüm
+top_clustering = sorted(clustering.items(), key=lambda x: x[1], reverse=True)[:5]
+print("En yüksek kümeleme katsayısına sahip düğümler:")
+for node, coef in top_clustering:
+    print(f"Yemek ID: {node}, Adı: {G.nodes[node]['name']}, Kümeleme Katsayısı: {coef}")
+# Bağlantı Bileşenleri (Connected Components)
+# Ne İşe Yarar?: Grafın ayrık (bağımsız) parçalarını bulur. Yemekler arasında bağlantısı olmayan alt grupları analiz etmek için kullanılabilir.
+components = list(nx.connected_components(G))
+print(f"Graf, {len(components)} farklı bağlantılı bileşene sahiptir.")
+
+# Her bileşenin düğümlerini yazdırma
+for i, component in enumerate(components):
+    print(f"Bileşen {i + 1}: {component}")
+# Merkezilik Ölçümleri (Centrality Measures)
+# Ne İşe Yarar?: Hangi yemeklerin grafikte daha merkezi bir rol oynadığını bulur. Daha fazla bağlantıya sahip veya stratejik pozisyondaki yemekleri belirlemek için kullanılabilir.
+# Derece Merkeziliği (Degree Centrality)
+
+degree_centrality = nx.degree_centrality(G)
+top_degree = sorted(degree_centrality.items(), key=lambda x: x[1], reverse=True)[:5]
+print("Derece merkeziliği en yüksek 5 düğüm:")
+for node, centrality in top_degree:
+    print(f"Yemek ID: {node}, Adı: {G.nodes[node]['name']}, Derece Merkeziliği: {centrality}")
+
+# Betweenness Merkeziliği (Betweenness Centrality)
+
+betweenness = nx.betweenness_centrality(G)
+top_betweenness = sorted(betweenness.items(), key=lambda x: x[1], reverse=True)[:5]
+print("Betweenness merkeziliği en yüksek 5 düğüm:")
+for node, centrality in top_betweenness:
+    print(f"Yemek ID: {node}, Adı: {G.nodes[node]['name']}, Betweenness Merkeziliği: {centrality}")
+
+# Shortest Path
+# Ne İşe Yarar?: İki yemek arasındaki bağlantıların en kısa yolunu bulur. Yemekler arasında hangi malzemelerin köprü rolü oynadığını anlamak için kullanılabilir.
+
+source = 1  # Kaynak düğüm ID'si
+target = 48  # Hedef düğüm ID'si
+if nx.has_path(G, source, target):
+    path = nx.shortest_path(G, source=source, target=target)
+    print(f"En kısa yol ({source} -> {target}): {path}")
+else:
+    print(f"{source} ve {target} arasında yol yok.")
+
+# Çap (Diameter)
+# Ne İşe Yarar?: Grafın en uzak iki düğümü arasındaki yol uzunluğunu bulur. Grafın "genişliğini" anlamak için kullanılır.
+
+if nx.is_connected(G):
+    diameter = nx.diameter(G)
+    print(f"Grafın çapı (en uzun en kısa yol): {diameter}")
+else:
+    print("Graf bağlantılı değil, çap hesaplanamaz.")
+
+# Topluluk Algılama (Community Detection)
+# Ne İşe Yarar?: Grafı benzer özelliklere sahip alt gruplara (topluluklara) böler. Yemeklerin benzer malzemelere göre hangi topluluklarda gruplaştığını görmek için kullanılabilir.
+# Girvan-Newman Algorithm
+
+from networkx.algorithms.community import girvan_newman
+
+communities = next(girvan_newman(G))  # İlk topluluk bölünmesini al
+for i, community in enumerate(communities):
+    print(f"Topluluk {i + 1}: {sorted(community)}")
+
+# Yoğunluk (Density)
+# Ne İşe Yarar?: Grafın ne kadar yoğun bağlantıya sahip olduğunu ölçer. Yemeklerin birbirine ne kadar bağlı olduğunu anlamak için kullanılabilir.
+
+density = nx.density(G)
+print(f"Grafın yoğunluğu: {density}")
+
+
+
+
