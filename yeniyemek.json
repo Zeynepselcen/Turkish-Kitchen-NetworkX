@@ -1,0 +1,961 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "name": "Mantı",
+      "region": "İç Anadolu",
+      "category": "Hamur işleri",
+      "ingredients": [
+        "Un",
+        "Yumurta",
+        "Kıyma",
+        "Soğan",
+        "Sarımsak"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "İçli Köfte",
+      "region": "Güneydoğu Anadolu",
+      "category": "Etli yemekler",
+      "ingredients": [
+        "Bulgur",
+        "Kıyma",
+        "Soğan",
+        "Ceviz",
+        "Baharatlar"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Çiğ Köfte",
+      "region": "Güneydoğu Anadolu",
+      "category": "Çiğ yemekler",
+      "ingredients": [
+        "Bulgur",
+        "Baharatlar",
+        "Soğan",
+        "Marul"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Döner",
+      "region": "Tüm Türkiye",
+      "category": "Etli yemekler",
+      "ingredients": [
+        "Dana eti",
+        "Baharatlar",
+        "Yağ",
+        "Pide"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Adana Kebabı",
+      "region": "Akdeniz",
+      "category": "Etli yemekler",
+      "ingredients": [
+        "Kıyma",
+        "Biber",
+        "Soğan",
+        "Baharatlar"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Urfa Kebabı",
+      "region": "Güneydoğu Anadolu",
+      "category": "Etli yemekler",
+      "ingredients": [
+        "Kıyma",
+        "Biber",
+        "Baharatlar"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Patlıcan Kebabı",
+      "region": "Güneydoğu Anadolu",
+      "category": "Etli yemekler",
+      "ingredients": [
+        "Kıyma",
+        "Patlıcan",
+        "Biber",
+        "Baharatlar"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Bamya Yemeği",
+      "region": "Akdeniz",
+      "category": "Sebze yemekleri",
+      "ingredients": [
+        "Bamya",
+        "Domates",
+        "Soğan",
+        "Zeytinyağı"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Kuru Fasülye Yemeği",
+      "region": "Tüm Türkiye",
+      "category": "Sebze yemekleri",
+      "ingredients": [
+        "Fasulye",
+        "Soğan",
+        "Domates",
+        "Zeytinyağı"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Sütlaç",
+      "region": "Tüm Türkiye",
+      "category": "Tatlılar",
+      "ingredients": [
+        "Süt",
+        "Pirinç",
+        "Şeker",
+        "Vanilya"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Tantuni",
+      "region": "Akdeniz",
+      "category": "Etli yemekler",
+      "ingredients": [
+        "Dana eti",
+        "Soğan",
+        "Biber",
+        "Baharatlar",
+        "Yufka"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Tas Kebabı",
+      "region": "Tüm Türkiye",
+      "category": "Etli yemekler",
+      "ingredients": [
+        "Dana eti",
+        "Soğan",
+        "Domates",
+        "Biber",
+        "Baharatlar"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Yaprak Sarması",
+      "region": "Tüm Türkiye",
+      "category": "Zeytinyağlılar",
+      "ingredients": [
+        "Asma yaprağı",
+        "Pirinci",
+        "Soğan",
+        "Zeytinyağı",
+        "Baharatlar"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Yayla Çorbası",
+      "region": "İç Anadolu",
+      "category": "Çorbalar",
+      "ingredients": [
+        "Yoğurt",
+        "Pirinci",
+        "Nane",
+        "Zeytinyağı",
+        "Tuz"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Zeytinyağlı Fasülye",
+      "region": "Ege",
+      "category": "Zeytinyağlılar",
+      "ingredients": [
+        "Fasulye",
+        "Zeytinyağı",
+        "Domates",
+        "Soğan",
+        "Baharatlar"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Pide",
+      "region": "Tüm Türkiye",
+      "category": "Hamur işleri",
+      "ingredients": [
+        "Un",
+        "Yumurta",
+        "Peynir",
+        "Kıyma",
+        "Baharatlar"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Menemen",
+      "region": "Tüm Türkiye",
+      "category": "Yumurta yemekleri",
+      "ingredients": [
+        "Yumurta",
+        "Domates",
+        "Biber",
+        "Soğan",
+        "Zeytinyağı"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "İmam Bayıldı",
+      "region": "Ege",
+      "category": "Zeytinyağlılar",
+      "ingredients": [
+        "Patlıcan",
+        "Soğan",
+        "Domates",
+        "Zeytinyağı",
+        "Sarımsak"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Fava",
+      "region": "Ege",
+      "category": "Zeytinyağlılar",
+      "ingredients": [
+        "Fava Fasulyesi",
+        "Zeytinyağı",
+        "Soğan",
+        "Sarımsak",
+        "Limon"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Zeytinyağlı Enginar",
+      "region": "Ege",
+      "category": "Zeytinyağlılar",
+      "ingredients": [
+        "Enginar",
+        "Zeytinyağı",
+        "Soğan",
+        "Limon",
+        "Baharatlar"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Kol Böreği",
+      "region": "Ege",
+      "category": "Hamur İşleri",
+      "ingredients": [
+        "Yufka",
+        "Peynir",
+        "Ispanak",
+        "Zeytinyağı"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Bursa İskender Kebabı",
+      "region": "Marmara",
+      "category": "Kebab",
+      "ingredients": [
+        "Kuzu veya dana eti",
+        "Pide",
+        "Yoğurt",
+        "Domates sosu",
+        "Tereyağı"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Kuzu Tandırlı Börek",
+      "region": "Marmara",
+      "category": "Et yemekleri",
+      "ingredients": [
+        "Kuzu eti",
+        "Hamur",
+        "Tereyağı"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Simit",
+      "region": "Marmara",
+      "category": "Sokak yemeği",
+      "ingredients": [
+        "Un",
+        "Susam",
+        "Yastık"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Bursa Kemalpaşa Tatlısı",
+      "region": "Marmara",
+      "category": "Tatlılar",
+      "ingredients": [
+        "İrmik",
+        "Şerbet",
+        "Yoğurt",
+        "Fıstık"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Keşkek",
+      "region": "Marmara",
+      "category": "Yöresel yemekler",
+      "ingredients": [
+        "Buğday",
+        "Kuzu eti",
+        "Nohut",
+        "Tereyağı"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "İzmit Pişmaniyesi",
+      "region": "Marmara",
+      "category": "Tatlılar",
+      "ingredients": [
+        "Şeker",
+        "Tereyağı",
+        "Un",
+        "Vanilya"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Karadeniz Usulü Kuzu Tandır",
+      "region": "Karadeniz (Trabzon)",
+      "category": "Et yemekleri",
+      "ingredients": [
+        "Kuzu eti",
+        "Soğan",
+        "Sarımsak",
+        "Baharatlar"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Fasulye Diblesi",
+      "region": "Karadeniz (Ordu, Giresun)",
+      "category": "Zeytinyağlı yemekler",
+      "ingredients": [
+        "Fasulye",
+        "Pirinç",
+        "Zeytinyağı",
+        "Soğan",
+        "Domates"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Karadeniz Pidesi",
+      "region": "Karadeniz (Trabzon)",
+      "category": "Hamur işleri",
+      "ingredients": [
+        "Un",
+        "Et",
+        "Biber",
+        "Soğan",
+        "Baharatlar"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Kalkan Tava",
+      "region": "Karadeniz",
+      "category": "Deniz ürünleri",
+      "ingredients": [
+        "Kalkan balığı",
+        "Mısır unu",
+        "Zeytinyağı",
+        "Limon"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Mıhlama",
+      "region": "Karadeniz",
+      "category": "Kahvaltılıklar",
+      "ingredients": [
+        "Mısır unu",
+        "Trabzon peyniri",
+        "Tereyağı",
+        "Süt"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Akçaabat Köfte",
+      "region": "Karadeniz",
+      "category": "Köfte",
+      "ingredients": [
+        "Kıyma",
+        "Soğan",
+        "Baharatlar",
+        "Ekmek içi"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Hamsi Tava",
+      "region": "Karadeniz",
+      "category": "Deniz ürünleri",
+      "ingredients": [
+        "Hamsi",
+        "Mısır unu",
+        "Yağ",
+        "Limon"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Laz Böreği",
+      "region": "Karadeniz",
+      "category": "Tatlılar",
+      "ingredients": ["Yufka", "Süt", "Şeker", "Un", "Vanilya"]
+    },
+    {
+      "id": 36,
+      "name": "Karalahana Çorbası",
+      "region": "Karadeniz",
+      "category": "Çorbalar",
+      "ingredients": ["Karalahana", "Bulgur", "Soğan", "Et suyu"]
+    },
+    {
+      "id": 37,
+      "name": "Süleyman Çorbası",
+      "region": "Karadeniz",
+      "category": "Çorbalar",
+      "ingredients": ["Süleyman fasulyesi", "Kuzu eti", "Soğan", "Baharatlar"]
+    },
+    {
+      "id": 38,
+      "name": "Kuzu Tandır",
+      "region": "İç Anadolu",
+      "category": "Et Yemekleri",
+      "ingredients": ["Kuzu eti", "Baharatlar", "Pilav"]
+    },
+    {
+      "id": 39,
+      "name": "Cızlak",
+      "region": "İç Anadolu",
+      "category": "Atıştırmalık",
+      "ingredients": ["Mısır unu", "Beyaz un", "Yağ"]
+    },
+    {
+      "id": 40,
+      "name": "Sübye",
+      "region": "İç Anadolu",
+      "category": "Tatlılar",
+      "ingredients": ["Pirinç unu", "Süt", "Şeker", "Tereyağı"]
+    },
+    {
+      "id": 41,
+      "name": "Börekli Çorba",
+      "region": "İç Anadolu",
+      "category": "Çorbalar",
+      "ingredients": ["Börek hamuru", "Et", "Yoğurt", "Baharatlar"]
+    },
+    {
+      "id": 42,
+      "name": "Safranlı Pirinç Pilavı",
+      "region": "İç Anadolu",
+      "category": "Pilavlar",
+      "ingredients": ["Pirinç", "Tereyağı", "Safran", "Et"]
+    },
+    {
+      "id": 43,
+      "name": "Sac Kavurma",
+      "region": "İç Anadolu",
+      "category": "Et Yemekleri",
+      "ingredients": ["Dana eti", "Soğan", "Biber", "Baharatlar"]
+    },
+    {
+      "id": 44,
+      "name": "Etli Ekmek",
+      "region": "İç Anadolu",
+      "category": "Hamur İşleri",
+      "ingredients": ["Hamur", "Kıyma", "Biber", "Soğan", "Baharatlar"]
+    },
+    {
+      "id": 45,
+      "name": "Tirit",
+      "region": "İç Anadolu",
+      "category": "Et Yemekleri",
+      "ingredients": ["Ekmek", "Kuzu eti", "Yoğurt", "Tereyağı"]
+    },
+    {
+      "id": 46,
+      "name": "Bıçak Arası",
+      "region": "İç Anadolu",
+      "category": "Et Yemekleri",
+      "ingredients": ["Dana eti", "Soğan", "Biber", "Ekmek"]
+    },
+    {
+      "id": 47,
+      "name": "Kuzu Tandır",
+      "region": "Doğu Anadolu",
+      "category": "Et Yemekleri",
+      "ingredients": ["Kuzu eti", "Baharatlar"]
+    },
+    {
+      "id": 48,
+      "name": "Ayran Aşı",
+      "region": "Doğu Anadolu",
+      "category": "Çorba",
+      "ingredients": ["Yoğurt", "Buğday", "Nohut", "Tereyağı"]
+    },
+    {
+      "id": 49,
+      "name": "Büryan Kebabı",
+      "region": "Doğu Anadolu",
+      "category": "Et Yemekleri",
+      "ingredients": ["Kuzu eti", "Baharatlar"]
+    },
+    {
+      "id": 50,
+      "name": "Köfteli Yumurta",
+      "region": "Doğu Anadolu",
+      "category": "Kahvaltılıklar",
+      "ingredients": ["Yumurta", "Köfte", "Domates"]
+    },
+    {
+      "id": 51,
+      "name": "Tandır Ekmeği",
+      "region": "Ağrı",
+      "category": "Ekmekler",
+      "ingredients": ["Un", "Tuz", "Su"]
+    },
+    {
+      "id": 52,
+      "name": "Süleymaniye Çorbası",
+      "region": "Doğu Anadolu",
+      "category": "Çorba",
+      "ingredients": ["Mercimek", "Buğday", "Et suyu"]
+    },
+    {
+      "id": 53,
+      "name": "Dolma",
+      "region": "Genel",
+      "category": "Zeytinyağlılar",
+      "ingredients": ["Asma Yaprağı", "Pirinç", "Soğan", "Biber", "Ceviz"]
+    },
+    {
+      "id": 54,
+      "name": "Mısır Ekmeği",
+      "region": "Karadeniz",
+      "category": "Ekmekler",
+      "ingredients": ["Mısır unu", "Buğday unu", "Su", "Tuz", "Kabartma tozu", "Yumurta"]
+    },
+    {
+      "id": 55,
+      "name": "Kara Lahana Sarması",
+      "region": "Karadeniz",
+      "category": "Zeytinyağlılar",
+      "ingredients": ["Kara lahana", "Kıyma", "Soğan", "Pirinc", "Zeytinyağı", "Domates", "Baharatlar"]
+    },
+    {
+      "id": 56,
+      "name": "Pepeçura",
+      "region": "Karadeniz",
+      "category": "Çorbalar",
+      "ingredients": ["Mısır unu", "Yoğurt", "Su", "Zeytinyağı", "Tuz", "Pul biber"]
+    },
+    {
+      "id": 57,
+      "name": "Hummus",
+      "region": "Orta Anadolu",
+      "category": "Mezeler",
+      "ingredients": ["Nohut", "Tahini", "Zeytinyağı", "Limon suyu", "Sarımsak", "Tuz", "Kimyon"]
+    },
+    {
+      "id": 58,
+      "name": "Ezme",
+      "region": "Güneydoğu Anadolu",
+      "category": "Mezeler",
+      "ingredients": ["Domates", "Biber", "Soğan", "Zeytinyağı", "Limon suyu", "Tuz", "Pul biber"]
+    },
+    {
+      "id": 59,
+      "name": "Çılbır",
+      "region": "Ege",
+      "category": "Mezeler",
+      "ingredients": ["Yumurta", "Yoğurt", "Sarımsak", "Tuz", "Pul biber", "Zeytinyağı"]
+    },
+    {
+      "id": 60,
+      "name": "Haydari",
+      "region": "Ege",
+      "category": "Mezeler",
+      "ingredients": ["Yoğurt", "Beyaz peynir", "Sarımsak", "Zeytinyağı", "Tuz", "Nane", "Dereotu"]
+    },
+    {
+      "id": 61,
+      "name": "Acılı Ezme",
+      "region": "Güneydoğu Anadolu",
+      "category": "Mezeler",
+      "ingredients": ["Domates", "Biber salçası", "Soğan", "Zeytinyağı", "Pul biber", "Limon suyu", "Tuz"]
+    },
+    {
+      "id": 62,
+      "name": "Künefe",
+      "region": "Akdeniz",
+      "category": "Tatlılar",
+      "ingredients": ["Kadayıf", "Peynir", "Şeker", "Su", "Tereyağı", "Fıstık"]
+    },
+    {
+      "id": 63,
+      "name": "Lokum",
+      "region": "Tüm Türkiye",
+      "category": "Tatlılar",
+      "ingredients": [
+         "Şeker",
+         "Nişasta",
+         "Limon suyu",
+         "Gül suyu",
+         "Pudra şekeri",
+         "Fıstık veya ceviz (isteğe bağlı)"
+      ]
+   },
+   {
+      "id": 64,
+      "name": "Kabak Tatlısı",
+      "region": "Marmara",
+      "category": "Tatlılar",
+      "ingredients": [
+         "Balkabağı",
+         "Şeker",
+         "Ceviz",
+         "Tarçın",
+         "Limon suyu"
+      ]
+   },
+   {
+      "id": 65,
+      "name": "Islama Köfte",
+      "region": "Marmara Bölgesi",
+      "category": "Yemekler",
+      "ingredients": [
+         "Kıyma",
+         "Soğan",
+         "Ekmek içi",
+         "Sarımsak",
+         "Baharatlar (kimyon, kararbiber)",
+         "Zeytinyağı",
+         "Yumurta",
+         "Domates",
+         "Yeşil biber"
+      ]
+   },
+   {
+      "id": 66,
+      "name": "Kayseri Yağlaması",
+      "region": "İç Anadolu",
+      "category": "Yemekler",
+      "ingredients": [
+         "Yufka",
+         "Kıyma",
+         "Soğan",
+         "Domates",
+         "Yeşil biber",
+         "Sarımsak",
+         "Salça",
+         "Baharatlar (kimyon, kararbiber, pul biber)",
+         "Zeytinyağı",
+         "Tuz"
+      ]
+   },
+   {
+      "id": 67,
+      "name": "Katmer",
+      "region": "Güneydoğu Anadolu",
+      "category": "Tatlılar",
+      "ingredients": [
+         "Un",
+         "Su",
+         "Tuz",
+         "Yumurta",
+         "Tereyağı",
+         "Pudra şekeri",
+         "Antep fıstığı"
+      ]
+   },
+   {
+      "id": 68,
+      "name": "Hamsi Tava",
+      "region": "Karadeniz Bölgesi",
+      "category": "Yemekler",
+      "ingredients": [
+         "Hamsi",
+         "Mısır unu",
+         "Tuz",
+         "Karabiber",
+         "Sıvı yağ",
+         "Limon"
+      ]
+   },
+   {
+      "id": 69,
+      "name": "Çibörek",
+      "region": "İç Anadolu",
+      "category": "Yemekler",
+      "ingredients": [
+         "Yufka",
+         "Kıyma",
+         "Soğan",
+         "Sarımsak",
+         "Tuz",
+         "Karabiber",
+         "Sıvı yağ"
+      ]
+   },
+   {
+      "id": 70,
+      "name": "İzmir Bomba",
+      "region": "Ege",
+      "category": "Tatlılar",
+      "ingredients": [
+         "Süt",
+         "Şeker",
+         "Un",
+         "Yumurta",
+         "Kabartma tozu",
+         "Vanilin",
+         "Peynir (beyaz peynir veya lor peyniri)",
+         "Toz şeker",
+         "Ceviz (isteğe bağlı)"
+      ]
+   },
+   {
+      "id": 71,
+      "name": "Höşmerim",
+      "region": "Ege",
+      "category": "Tatlılar",
+      "ingredients": [
+         "Un",
+         "Süt",
+         "Şeker",
+         "Tuz",
+         "Maya",
+         "Terayağı",
+         "Ceviz"
+      ]
+   },
+   {
+      "id": 72,
+      "name": "Mumbar Dolması",
+      "region": "Güneydoğu Anadolu",
+      "category": "Yemekler",
+      "ingredients": [
+         "Mumbar (bağırsak)",
+         "Kıyma",
+         "Soğan",
+         "Pirinç",
+         "Salça",
+         "Baharatlar (kimyon, pul biber, kararbiber)",
+         "Zeytinyağı",
+         "Sarımsak",
+         "Tuz"
+      ]
+   },
+   {
+      "id": 73,
+      "name": "Nohut Dürüm",
+      "region": "Güneydoğu Anadolu",
+      "category": "Yemekler",
+      "ingredients": [
+         "Nohut",
+         "Tortilla ekmeği (veya lavaş)",
+         "Soğan",
+         "Domates",
+         "Limon",
+         "Zeytinyağı",
+         "Pul biber",
+         "Tuz"
+      ]
+   },
+   {
+      "id": 74,
+      "name": "Kelle Paça",
+      "region": "Genel (Türkiye Geneli)",
+      "category": "Etli Yemekler",
+      "ingredients": [
+         "Kelle (baş ve ayak kısmı)",
+         "Paça (sığır ya da koyun bacağı)",
+         "Soğan",
+         "Sarımsak",
+         "Sirke",
+         "Pul biber",
+         "Nane",
+         "Tuz",
+         "Limon"
+      ]
+   },
+   {
+      "id": 75,
+      "name": "Kaburga Dolması",
+      "region": "Güneydoğu Anadolu",
+      "category": "Etli Yemekler",
+      "ingredients": [
+         "Kaburga (kuzu veya dana)",
+         "Kıyma",
+         "Pirinç",
+         "Soğan",
+         "Biber",
+         "Baharatlar (kimyon, pul biber, kararbiber)",
+         "Zeytinyağı",
+         "Sarımsak",
+         "Tuz",
+         "Limon suyu"
+      ]
+   },
+   {
+      "id": 76,
+      "name": "Etli Bulgur Pilavı",
+      "region": "Güneydoğu Anadolu",
+      "category": "Etli Yemekler",
+      "ingredients": [
+         "Bulgur",
+         "Kıyma veya et",
+         "Soğan",
+         "Domates",
+         "Biber",
+         "Sarımsak",
+         "Salça",
+         "Zeytinyağı",
+         "Baharatlar (kimyon, pul biber, kararbiber)",
+         "Tuz",
+         "Sıcak su"
+      ]
+   },
+   {
+      "id": 77,
+      "name": "Kabak Çiçeği Dolması",
+      "region": "Ege",
+      "category": "Zeytinyağlılar",
+      "ingredients": [
+         "Kabak çiçekleri",
+         "Pirinç",
+         "Zeytinyağı",
+         "Soğan",
+         "Sarımsak",
+         "Dereotu",
+         "Tuz",
+         "Karabiber",
+         "Limon suyu (isteğe bağlı)",
+         "Su"
+      ]
+   },
+   {
+      "id": 78,
+      "name": "Ali Nazik Kebabı",
+      "region": "Güneydoğu Anadolu",
+      "category": "Et Yemekleri",
+      "ingredients": [
+         "Kuzu eti",
+         "Yoğurt",
+         "Patlıcan",
+         "Soğan",
+         "Sarımsak",
+         "Zeytinyağı",
+         "Tuz",
+         "Karabiber",
+         "Pul biber",
+         "Domates",
+         "Biber"
+      ]
+   },
+   {
+      "id": 79,
+      "name": "Aşure",
+      "region": "Türkiye Genel",
+      "category": "Tatlılar",
+      "ingredients": [
+         "Buğday",
+         "Nohut",
+         "Fasulye",
+         "Kuru üzüm",
+         "Kayısı",
+         "Ceviz",
+         "Fındık",
+         "Nar",
+         "Tarçın",
+         "Şeker",
+         "Süt",
+         "Tuz",
+         "Vanilin",
+         "Portakal kabuğu"
+      ]
+   },
+   {
+      "id": 80,
+      "name": "Bakla",
+      "region": "Ege",
+      "category": "Zeytinyağlılar",
+      "ingredients": [
+         "Bakla",
+         "Zeytinyağı",
+         "Soğan",
+         "Sarımsak",
+         "Tuz",
+         "Karabiber",
+         "Limon suyu",
+         "Dereotu"
+      ]
+   },
+   {
+      "id": 81,
+      "name": "Portakallı Kereviz",
+      "region": "Ege",
+      "category": "Zeytinyağlılar",
+      "ingredients": [
+         "Kereviz",
+         "Portakal suyu",
+         "Zeytinyağı",
+         "Soğan",
+         "Havuç",
+         "Tuz",
+         "Şeker",
+         "Limon suyu",
+         "Dereotu"
+      ]
+   },
+   {
+      "id": 82,
+      "name": "Hünkar Beğendi",
+      "region": "Türkiye Genel",
+      "category": "Ana Yemekler",
+      "ingredients": [
+         "Dana eti",
+         "Patlıcan",
+         "Soğan",
+         "Sarımsak",
+         "Domates",
+         "Biber",
+         "Süt",
+         "Tereyağı",
+         "Un",
+         "Zeytinyağı",
+         "Tuz",
+         "Karabiber",
+         "Pul biber"
+      ]
+   }
+   
+    
+    
+  ]
+}

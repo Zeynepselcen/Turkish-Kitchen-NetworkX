@@ -164,7 +164,16 @@ for i, community in enumerate(communities):
 
 density = nx.density(G)
 print(f"Grafın yoğunluğu: {density}")
+# Yemekler Arası Benzerlik Skoru
+# Ne yapar?: Yemekler arasındaki benzerliği, kullanılan malzemelere göre bir "skor" ile ifade edebilirsiniz. Örneğin, iki yemek ne kadar fazla ortak malzeme içeriyorsa, aralarındaki skor o kadar yüksek olabilir.
 
+from networkx.algorithms.link_prediction import jaccard_coefficient
+# Jaccard skorlarını hesaplama
+for u, v, p in jaccard_coefficient(G, [(y1, y2) for y1 in G.nodes for y2 in G.nodes if y1 != y2]):
+    yemek1_name = G.nodes[u]["name"]
+    yemek2_name = G.nodes[v]["name"]
+    
+    print(f"Yemek {yemek1_name} ile Yemek {yemek2_name} arasındaki Jaccard Skoru: {p:.2f}")
 
 
 
