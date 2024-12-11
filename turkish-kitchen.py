@@ -174,6 +174,7 @@ for u, v, p in jaccard_coefficient(G, [(y1, y2) for y1 in G.nodes for y2 in G.no
     yemek2_name = G.nodes[v]["name"]
     
     print(f"Yemek {yemek1_name} ile Yemek {yemek2_name} arasındaki Jaccard Skoru: {p:.2f}")
+# Meltem Repo
 
 
 
