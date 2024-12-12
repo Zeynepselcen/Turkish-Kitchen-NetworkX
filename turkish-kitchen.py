@@ -133,7 +133,7 @@ for node, centrality in top_betweenness:
 # Ne İşe Yarar?: İki yemek arasındaki bağlantıların en kısa yolunu bulur. Yemekler arasında hangi malzemelerin köprü rolü oynadığını anlamak için kullanılabilir.
 
 source = 1  # Kaynak düğüm ID'si
-target = 48  # Hedef düğüm ID'si
+target = 36  # Hedef düğüm ID'si
 if nx.has_path(G, source, target):
     path = nx.shortest_path(G, source=source, target=target)
     print(f"En kısa yol ({source} -> {target}): {path}")
@@ -157,7 +157,9 @@ from networkx.algorithms.community import girvan_newman
 
 communities = next(girvan_newman(G))  # İlk topluluk bölünmesini al
 for i, community in enumerate(communities):
-    print(f"Topluluk {i + 1}: {sorted(community)}")
+    
+    community_names = [G.nodes[node]["name"] for node in community]
+    print(f"Topluluk {i + 1}: {sorted(community_names)}")
 
 # Yoğunluk (Density)
 # Ne İşe Yarar?: Grafın ne kadar yoğun bağlantıya sahip olduğunu ölçer. Yemeklerin birbirine ne kadar bağlı olduğunu anlamak için kullanılabilir.
