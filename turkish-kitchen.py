@@ -54,7 +54,7 @@ sorted_degree = sorted(degree_dict.items(), key=lambda x: x[1], reverse=True)
 top_5_nodes = sorted_degree[:5]
                             
 
-print(f"\nEn fazla komşusu olan yemekler:")
+print(f"\nEn fazla komşusu olan yemekler: {G.nodes[max_degree]["name"]}")
 for node in most_connected_nodes:
     print(f"Yemek ID: {node}, Yemek Adı: {G.nodes[node]['name']}, Komşu Sayısı: {max_degree}")
 
