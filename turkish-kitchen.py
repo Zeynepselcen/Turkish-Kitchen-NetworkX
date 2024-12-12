@@ -3,7 +3,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # JSON dosyasını yükleme
-file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/yemeklerr.json"
+# file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/yemeklerr.json"
+file_path = "/Users/sekerismail/Desktop/Turkish-Kitchen-NetworkX/yemeklerr.json"
 with open(file_path, "r", encoding="utf-8") as file:
     data = json.load(file),
 
@@ -17,7 +18,11 @@ for yemek in data["nodes"]:
         name=yemek["name"],  # Yemek adı
         region=yemek["region"],  # Bölge
         category=yemek["category"],  # Kategori
+<<<<<<< HEAD
         ingredients=yemek["ingredients"]  # Malzemeler
+=======
+        ingredients=yemek["ingredients"],  # Malzemeler
+>>>>>>> 7adddf1b65fefbb1dd025e57da0cc6ca4ad46236
     )
 
 # Kenarları oluşturma (ortak malzemelere göre bağlama)
@@ -53,7 +58,7 @@ sorted_degree = sorted(degree_dict.items(), key=lambda x: x[1], reverse=True)
 top_5_nodes = sorted_degree[:5]
                             
 
-print(f"\nEn fazla komşusu olan yemekler:")
+print(f"\nEn fazla komşusu olan yemekler: {G.nodes[max_degree]["name"]}")
 for node in most_connected_nodes:
     print(f"Yemek ID: {node}, Yemek Adı: {G.nodes[node]['name']}, Komşu Sayısı: {max_degree}")
 
@@ -132,7 +137,7 @@ for node, centrality in top_betweenness:
 # Ne İşe Yarar?: İki yemek arasındaki bağlantıların en kısa yolunu bulur. Yemekler arasında hangi malzemelerin köprü rolü oynadığını anlamak için kullanılabilir.
 
 source = 1  # Kaynak düğüm ID'si
-target = 48  # Hedef düğüm ID'si
+target = 36  # Hedef düğüm ID'si
 if nx.has_path(G, source, target):
     path = nx.shortest_path(G, source=source, target=target)
     print(f"En kısa yol ({source} -> {target}): {path}")
@@ -156,7 +161,9 @@ from networkx.algorithms.community import girvan_newman
 
 communities = next(girvan_newman(G))  # İlk topluluk bölünmesini al
 for i, community in enumerate(communities):
-    print(f"Topluluk {i + 1}: {sorted(community)}")
+    
+    community_names = [G.nodes[node]["name"] for node in community]
+    print(f"Topluluk {i + 1}: {sorted(community_names)}")
 
 # Yoğunluk (Density)
 # Ne İşe Yarar?: Grafın ne kadar yoğun bağlantıya sahip olduğunu ölçer. Yemeklerin birbirine ne kadar bağlı olduğunu anlamak için kullanılabilir.
