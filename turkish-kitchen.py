@@ -1,6 +1,11 @@
 import json
 import networkx as nx
 import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+import plotly.graph_objects as go
+import plotly.io as pio
+
 
 # JSON dosyasını yükleme
 # file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/yemeklerr.json"
@@ -170,10 +175,90 @@ print(f"Grafın yoğunluğu: {density}")
 
 from networkx.algorithms.link_prediction import jaccard_coefficient
 # Jaccard skorlarını hesaplama
+jaccard_scores = []
 for u, v, p in jaccard_coefficient(G, [(y1, y2) for y1 in G.nodes for y2 in G.nodes if y1 != y2]):
     yemek1_name = G.nodes[u]["name"]
     yemek2_name = G.nodes[v]["name"]
+    jaccard_scores.append(p)
+
     
     print(f"Yemek {yemek1_name} ile Yemek {yemek2_name} arasındaki Jaccard Skoru: {p:.2f}")
+plt.figure(figsize=(10, 6))
+plt.hist(jaccard_scores, bins=10, color="lightblue", edgecolor="black")
+plt.title("Yemekler Arasındaki Jaccard Skor Dağılımı", fontsize=16)
+plt.xlabel("Jaccard Skoru", fontsize=14)
+plt.ylabel("Yemek Çifti Sayısı", fontsize=14)
+plt.grid(axis="y", linestyle="--", alpha=0.7)
+plt.show()
+
+# Bölgelere göre yemek sayısı
+# Hangi bölgelerin daha fazla çeşitliliğe sahip olduğunu gösterir.
+regions = [G.nodes[n]["region"] for n in G.nodes]
+region_counts = {region: regions.count(region) for region in set(regions)}
+
+plt.figure(figsize=(10, 6))
+plt.bar(region_counts.keys(), region_counts.values(), color="coral", edgecolor="black")
+plt.title("Bölgelere Göre Yemek Dağılımı", fontsize=16)
+plt.xlabel("Bölgeler", fontsize=14)
+plt.ylabel("Yemek Sayısı", fontsize=14)
+plt.xticks(rotation=45)
+plt.grid(axis="y", linestyle="--", alpha=0.7)
+plt.show()
+
+# Kategorilere göre yemek sayısı
+categories = [G.nodes[n]["category"] for n in G.nodes]
+category_counts = pd.Series(categories).value_counts()
+
+# Pasta grafiği
+plt.figure(figsize=(8, 8))
+category_counts.plot.pie(
+    autopct="%1.1f%%", colors=plt.cm.Paired.colors, textprops={"fontsize": 12}, startangle=90
+)
+plt.title("Kategorilere Göre Yemek Dağılımı", fontsize=16)
+plt.ylabel("")  # Y eksenini gizle
+plt.show()
+
+# Malzemelerin popülerlik analizi
+ingredient_counts = {}
+for _, _, data in G.edges(data=True):
+    for ingredient in data["ortak_malzemeler"]:
+        ingredient_counts[ingredient] = ingredient_counts.get(ingredient, 0) + 1
+
+ingredient_df = pd.DataFrame(list(ingredient_counts.items()), columns=["Ingredient", "Count"])
+ingredient_df = ingredient_df.sort_values("Count", ascending=False).head(10)  # İlk 10 malzeme
+
+# Barplot ile görselleştirme
+plt.figure(figsize=(10, 6))
+sns.barplot(data=ingredient_df, x="Count", y="Ingredient", palette="viridis")
+plt.title("En Çok Kullanılan Malzemeler", fontsize=16)
+plt.xlabel("Kullanım Sayısı", fontsize=14)
+plt.ylabel("Malzeme", fontsize=14)
+plt.grid(axis="x", linestyle="--", alpha=0.7)
+plt.show()
+
+# Düğüm ve kenar koordinatları
+pos = nx.spring_layout(G, seed=42)
+x_nodes = [pos[n][0] for n in G.nodes]
+y_nodes = [pos[n][1] for n in G.nodes]
+
+# Düğümleri görselleştirme
+pos = nx.spring_layout(G, seed=42)  # Sabit düzen için seed ekledik
+x_nodes = [pos[n][0] for n in G.nodes]
+y_nodes = [pos[n][1] for n in G.nodes]
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(
+    x=x_nodes, y=y_nodes,
+    mode="markers+text",
+    text=[G.nodes[n]["name"] for n in G.nodes],
+    textposition="top center",
+    marker=dict(size=10, color="blue", opacity=0.8),
+    name="Yemekler"
+))
+pio.renderers.default = "browser"  # Tarayıcıda açar
+
+fig.update_layout(title="Türk Mutfağı Yemek Grafiği (Etkileşimli)", showlegend=False)
+fig.show()
+
 
 
