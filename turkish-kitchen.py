@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 # file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/yemeklerr.json"
 file_path = "/Users/sekerismail/Desktop/Turkish-Kitchen-NetworkX/yemeklerr.json"
 with open(file_path, "r", encoding="utf-8") as file:
-    data = json.load(file),
-
+    data = json.load(file)
 
 G = nx.Graph()
 
@@ -18,11 +17,7 @@ for yemek in data["nodes"]:
         name=yemek["name"],  # Yemek adı
         region=yemek["region"],  # Bölge
         category=yemek["category"],  # Kategori
-<<<<<<< HEAD
         ingredients=yemek["ingredients"]  # Malzemeler
-=======
-        ingredients=yemek["ingredients"],  # Malzemeler
->>>>>>> 7adddf1b65fefbb1dd025e57da0cc6ca4ad46236
     )
 
 # Kenarları oluşturma (ortak malzemelere göre bağlama)

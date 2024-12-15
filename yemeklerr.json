@@ -23,7 +23,8 @@
         "Bulgur",
         "Kıyma",
         "Soğan",
-        "Ceviz"
+        "Ceviz",
+        "Baharatlar"
       ],
       "description": "İçli köfte, ince bulgurlu dış harcı ile kıymalı iç harcı birleşerek yapılan bir tür köftedir. Genellikle Güneydoğu Anadolu mutfağında popülerdir."
     },
@@ -34,7 +35,7 @@
       "category": "Çiğ yemekler",
       "ingredients": [
         "Bulgur",
-     
+        "Baharatlar",
         "Soğan",
         "Marul"
       ],
@@ -43,11 +44,11 @@
     {
       "id": 4,
       "name": "Döner",
-      "region": "Marmara ",
+      "region": "Tüm Türkiye",
       "category": "Etli yemekler",
       "ingredients": [
         "Dana eti",
-        
+        "Baharatlar",
         "Yağ",
         "Pide"
       ],
@@ -61,8 +62,8 @@
       "ingredients": [
         "Kıyma",
         "Biber",
-        "Soğan"
-        
+        "Soğan",
+        "Baharatlar"
       ],
       "description": "Adana kebabı, kıyma ve baharatlarla hazırlanan etin şişe geçirilerek mangalda pişirilmesiyle yapılır. Adana'nın simgelerindendir."
     },
@@ -73,8 +74,8 @@
       "category": "Etli yemekler",
       "ingredients": [
         "Kıyma",
-        "Biber"
-        
+        "Biber",
+        "Baharatlar"
       ],
       "description": "Urfa kebabı, Adana kebabına benzer, ancak daha az baharatlıdır. Genellikle şişe geçirilerek mangalda pişirilir."
     },
@@ -86,8 +87,8 @@
       "ingredients": [
         "Kıyma",
         "Patlıcan",
-        "Biber"
-        
+        "Biber",
+        "Baharatlar"
       ],
       "description": "Patlıcan kebabı, et ve patlıcanın birleşimiyle yapılan ve mangalda pişirilen bir kebap türüdür."
     },
@@ -107,7 +108,7 @@
     {
       "id": 9,
       "name": "Kuru Fasülye Yemeği",
-      "region": "Doğu Anadolu",
+      "region": "Tüm Türkiye",
       "category": "Sebze yemekleri",
       "ingredients": [
         "Fasulye",
@@ -122,7 +123,7 @@
     {
       "id": 10,
       "name": "Sütlaç",
-      "region": "Karadeniz",
+      "region": "Tüm Türkiye",
       "category": "Tatlılar",
       "ingredients": [
         "Süt",
@@ -141,7 +142,7 @@
         "Dana eti",
         "Soğan",
         "Biber",
-        
+        "Baharatlar",
         "Yufka"
       ],
       "description": "Tantuni, ince doğranmış etin baharatlarla kavrulup yufka içerisine sarılmasıyla yapılan, Mersin'e özgü bir fast food yemeğidir."
@@ -149,28 +150,28 @@
     {
       "id": 12,
       "name": "Tas Kebabı",
-      "region": "Doğu Anadolu",
+      "region": "Tüm Türkiye",
       "category": "Etli yemekler",
       "ingredients": [
         "Dana eti",
         "Soğan",
         "Domates",
-        "Biber"
-        
+        "Biber",
+        "Baharatlar"
       ],
       "description": "Tas kebabı, etin sebzelerle birlikte pişirilerek yapılan ve özellikle ana yemek olarak tercih edilen bir yemektir."
     },
     {
       "id": 13,
       "name": "Yaprak Sarması",
-      "region": "Ege",
+      "region": "Tüm Türkiye",
       "category": "Zeytinyağlılar",
       "ingredients": [
         "Asma yaprağı",
         "Pirinci",
         "Soğan",
-        "Zeytinyağı"
-        
+        "Zeytinyağı",
+        "Baharatlar"
       ],
       "description": "Yaprak sarması, asma yapraklarına sarılan pilavlı dolmadır. Zeytinyağıyla pişirilir ve soğuk servis edilir."
     },
@@ -183,8 +184,8 @@
         "Yoğurt",
         "Pirinci",
         "Nane",
-        "Zeytinyağı"
-        
+        "Zeytinyağı",
+        "Tuz"
       ],
       "description": "Yayla çorbası, yoğurt ve pirinçle yapılan, üzerine nane eklenerek servis edilen bir çorbadır."
     },
@@ -197,29 +198,29 @@
         "Fasulye",
         "Zeytinyağı",
         "Domates",
-        "Soğan"
-       
+        "Soğan",
+        "Baharatlar"
       ],
       "description": "Zeytinyağlı fasulye, yeşil fasulyenin zeytinyağında pişirilerek yapılan bir yemektir. Özellikle Ege mutfağının sevilen yemeklerindendir."
     },
       {
         "id": 16,
         "name": "Pide",
-        "region": "İç Anadolu",
+        "region": "Tüm Türkiye",
         "category": "Hamur işleri",
         "ingredients": [
           "Un",
           "Yumurta",
           "Peynir",
-          "Kıyma"
-          
+          "Kıyma",
+          "Baharatlar"
         ],
         "description": "Pide, ince hamurun üzerine çeşitli malzemelerin serilerek pişirilmesiyle yapılan geleneksel bir Türk yemeğidir. Genellikle etli veya peynirli çeşitleri bulunur."
       },
       {
         "id": 17,
         "name": "Menemen",
-        "region": "Ege",
+        "region": "Tüm Türkiye",
         "category": "Yumurta yemekleri",
         "ingredients": [
           "Yumurta",
@@ -267,8 +268,8 @@
           "Enginar",
           "Zeytinyağı",
           "Soğan",
-          "Limon"
-          
+          "Limon",
+          "Baharatlar"
            ],
           "description": "Zeytinyağlı enginar, enginarın zeytinyağı, soğan ve limonla pişirilmesiyle yapılan, Ege mutfağının sevilen yemeklerinden biridir."
       },
@@ -290,7 +291,7 @@
         "id": 22,
         "name": "Bursa İskender Kebabı",
         "region": "Marmara",
-        "category": "Kebap",
+        "category": "Kebab",
         "ingredients": [
            "Kuzu veya dana eti",
             "Pide",
@@ -320,7 +321,7 @@
           "ingredients": [
             "Un",
             "Susam",
-            "Pekmez"
+            "Yastık"
             ],
             "description": "Genellikle kahvaltılarda veya ara öğünlerde tüketilen susam kaplı ekmek."
         },
@@ -366,15 +367,15 @@
         {
           "id": 28,
           "name": "Karadeniz Usulü Kuzu Tandır",
-          "region": "Karadeniz",
+          "region": "Karadeniz (Trabzon)",
           "category": "Et yemekleri",
-          "ingredients": ["Kuzu eti", "Soğan", "Sarımsak"],
+          "ingredients": ["Kuzu eti", "Soğan", "Sarımsak", "Baharatlar"],
           "description": "Karadeniz'in geleneksel tandır yemeği, kuzu etinin odun ateşinde veya özel fırınlarda pişirilerek, yumuşak ve lezzetli hale gelmesiyle yapılır. Yanında pilav ve yoğurt ile servis edilir."
         },
         {
           "id": 29,
           "name": "Fasulye Diblesi",
-          "region": "Karadeniz",
+          "region": "Karadeniz (Ordu, Giresun)",
           "category": "Zeytinyağlı yemekler",
           "ingredients": ["Fasulye", "Pirinç", "Zeytinyağı", "Soğan", "Domates"],
           "description": "Fasulye, pirinç ve domatesin zeytinyağı ile pişirilmesiyle yapılan Karadeniz mutfağına özgü sağlıklı bir yemektir."
@@ -382,9 +383,9 @@
         {
           "id": 30,
           "name": "Karadeniz Pidesi",
-          "region": "Karadeniz",
+          "region": "Karadeniz (Trabzon)",
           "category": "Hamur işleri",
-          "ingredients": ["Un", "Et", "Biber", "Soğan"],
+          "ingredients": ["Un", "Et", "Biber", "Soğan", "Baharatlar"],
           "description": "Karadeniz'e özgü yumuşak hamuruyla hazırlanan, üzeri bol malzemeyle doldurulmuş pide."
         },
         {
@@ -408,7 +409,7 @@
           "name": "Akçaabat Köfte",
           "region": "Karadeniz",
           "category": "Köfte",
-          "ingredients": ["Kıyma", "Soğan", "Ekmek içi"],
+          "ingredients": ["Kıyma", "Soğan", "Baharatlar", "Ekmek içi"],
           "description": "Trabzon'un Akçaabat ilçesinden gelen meşhur köfte, kıymaya baharat ve ekmek içi karıştırılarak yapılan nefis bir yemektir."
         },
         {
@@ -440,7 +441,7 @@
          "name": "Süleyman Çorbası",
          "region": "Karadeniz ",
          "category": "Çorbalar",
-         "ingredients": ["Fasulye", "Kuzu eti", "Soğan"],
+         "ingredients": ["Süleyman fasulyesi", "Kuzu eti", "Soğan", "Baharatlar"],
          "description": "Süleyman fasulyesi ve kuzu eti ile yapılan, Karadeniz'in sevilen ve besleyici çorbalarından biridir."
        },
        {
@@ -473,7 +474,7 @@
           "name": "Börekli Çorba",
           "region": "İç Anadolu",
           "category": "Çorbalar",
-          "ingredients": ["Börek hamuru", "Et", "Yoğurt"],
+          "ingredients": ["Börek hamuru", "Et", "Yoğurt", "Baharatlar"],
           "description": "Börek hamurunun et, yoğurt ve baharatla birleşmesiyle yapılan sıcak bir çorba."
         },
         {
@@ -489,7 +490,7 @@
           "name": "Sac Kavurma",
           "region": "İç Anadolu",
           "category": "Et Yemekleri",
-          "ingredients": ["Dana eti", "Soğan", "Biber"],
+          "ingredients": ["Dana eti", "Soğan", "Biber", "Baharatlar"],
            "description": "Konya mutfağına ait, dana etinin sacda kavrulup, soğan ve biberle lezzetlendirilmesiyle yapılan geleneksel bir et yemeği."
       },
       {
@@ -497,7 +498,7 @@
           "name": "Etli Ekmek",
           "region": "İç Anadolu",
           "category": "Hamur İşleri",
-          "ingredients": ["Hamur", "Kıyma", "Biber", "Soğan"],
+          "ingredients": ["Hamur", "Kıyma", "Biber", "Soğan", "Baharatlar"],
            "description": "Konya'ya özgü ince hamurun üzerine etli harç konarak taş fırında pişirilen, lezzetli bir yöresel yemek."
       },
       {
@@ -521,7 +522,7 @@
           "name": "Kuzu Tandır",
           "region": "Doğu Anadolu",
           "category": "Et yemekleri",
-          "ingredients": ["Kuzu eti"],
+          "ingredients": ["Kuzu eti", "baharatlar"],
           "description": "Erzurum'a özgü olan kuzu tandır, etin uzun süre düşük ısılı fırında pişirilmesiyle yapılan bir yemektir. Genellikle pilav ve yoğurt eşliğinde servis edilir."
        },
        {
@@ -537,7 +538,7 @@
          "name": "Büryan Kebabı",
          "region": "Doğu Anadolu",
          "category": "Et yemekleri",
-         "ingredients": ["Kuzu eti"],
+         "ingredients": ["Kuzu eti", "baharatlar"],
          "description": "Van'a özgü bu kebap, kuzu etinin toprak fırında pişirilmesiyle yapılır. Etin yumuşak ve lezzetli olması için özel bir pişirme tekniği uygulanır."
       },
       {
@@ -551,7 +552,7 @@
       {
           "id": 51,
           "name": "Tandır Ekmeği",
-          "region": "Dopu Anadolu",
+          "region": "Ağrı",
           "category": "Ekmekler",
           "ingredients": ["Un", "tuz", "su"],
           "description": "Ağrı'nın geleneksel ekmeği olan tandır ekmeği, tandırda pişirilir ve genellikle et yemekleriyle birlikte servis edilir."
@@ -567,7 +568,7 @@
       {
           "id": 53,
           "name": "Dolma",
-          "region": "Ege",
+          "region": "Genel",
           "category": "Zeytinyağlılar",
           "ingredients": ["Asma Yaprağı","Pirinç","Soğan","Biber","Ceviz"],
           "description": "Dolma, genellikle asma yaprağı veya biber gibi sebzelerin içine pirinç ve baharat karışımının doldurulmasıyla yapılan bir yemektir."
@@ -598,8 +599,8 @@
                          "Soğan",
                          "Pirinc",
                          "Zeytinyağı",
-                         "Domates"
-                         
+                         "Domates",
+                         "Baharatlar"
                           ],
          "description": "Kara lahana sarması, Karadeniz mutfağının en bilinen yemeklerinden biridir. Kara lahana yapraklarının içerisine kıyma, pirinç, soğan ve baharatlarla yapılan harç konulup sarılır. Genellikle zeytinyağı ile pişirilir ve özellikle soğuk olarak servis edilir."
         },
@@ -612,9 +613,9 @@
                               "Mısır unu",
                               "Yoğurt",
                               "Su",
-                              "Zeytinyağı"
-                              
-                              
+                              "Zeytinyağı",
+                              "Tuz",
+                              "Pul biber"
                             ],
             "description": "Pepeçura, Karadeniz mutfağına ait geleneksel bir çorbadır. Mısır unu, yoğurt ve zeytinyağı ile hazırlanan bu çorba, hafif asidik ve kremsi bir lezzet sunar. Genellikle sıcak servis edilir ve özellikle kış aylarında yenir."
         },
@@ -629,7 +630,7 @@
                               "Zeytinyağı",
                               "Limon suyu",
                               "Sarımsak",
-                              
+                              "Tuz",
                               "Kimyon"
                             ],
            "description": "Hummus, Orta Anadolu mutfağının yaygın mezelerindendir. Nohut, tahini ve sarımsak ile hazırlanan bu meze, zeytinyağı ve baharatlarla lezzetlendirilir. Genellikle sıcak ekmekle servis edilir."
@@ -645,7 +646,7 @@
                               "Soğan",
                               "Zeytinyağı",
                               "Limon suyu",
-                             
+                              "Tuz",
                               "Pul biber"
                             ],
            "description": "Ezme, Güneydoğu Anadolu mutfağının taze ve baharatlı mezesidir. Doğranmış domates, biber, soğan ve çeşitli baharatlar karıştırılarak hazırlanır. Genellikle sıcak ve taze ekmekle yenir."
@@ -659,7 +660,7 @@
                               "Yumurta",
                               "Yoğurt",
                               "Sarımsak",
-                             
+                              "Tuz",
                               "Pul biber",
                               "Zeytinyağı"
                             ],
@@ -675,7 +676,7 @@
                               "Beyaz peynir",
                               "Sarımsak",
                               "Zeytinyağı",
-                              
+                              "Tuz",
                               "Nane",
                               "Dereotu"
                             ],
@@ -692,8 +693,8 @@
                               "Soğan",
                               "Zeytinyağı",
                               "Pul biber",
-                              "Limon suyu"
-                             
+                              "Limon suyu",
+                              "Tuz"
                             ],
               "description": "Acılı ezme, Güneydoğu Anadolu mutfağının acılı ve baharatlı mezesidir. Domates, soğan, biber salçası ve pul biber karıştırılarak hazırlanan bu meze, acı severler için vazgeçilmez bir tat sunar."
           },
@@ -715,7 +716,7 @@
            {
                "id": 63,
                "name": "Lokum",
-               "region": "Marmara",
+               "region": "Tüm Türkiye",
                "category": "Tatlılar",
                "ingredients": [
                               "Şeker",
@@ -723,7 +724,7 @@
                               "Limon suyu",
                               "Gül suyu",
                               "Pudra şekeri",
-                              "Fıstık"
+                              "Fıstık veya ceviz (isteğe bağlı)"
                             ],
               "description": "Lokum, Türkiye'nin geleneksel tatlılarından biridir. Şeker, nişasta ve limon suyuyla kaynatılarak yapılan bu tatlı, genellikle gül suyu ile lezzetlendirilir ve üzerine pudra şekeri serpilerek dilimlenir."
            },
@@ -744,14 +745,14 @@
            {
                 "id": 65,
                 "name": "Islama Köfte",
-                "region": "Marmara",
+                "region": "Marmara Bölgesi",
                 "category": "Yemekler",
                 "ingredients": [
                               "Kıyma",
                               "Soğan",
                               "Ekmek içi",
                               "Sarımsak",
-                              
+                              "Baharatlar (kimyon, kararbiber)",
                               "Zeytinyağı",
                               "Yumurta",
                               "Domates",
@@ -772,9 +773,9 @@
                               "Yeşil biber",
                               "Sarımsak",
                               "Salça",
-                              
-                              "Zeytinyağı"
-                              
+                              "Baharatlar (kimyon, kararbiber, pul biber)",
+                              "Zeytinyağı",
+                              "Tuz"
                             ],
                  "description": "Kayseri Yağlaması, Kayseri'ye özgü geleneksel bir yemektir. İnce yufkaların arasına kıymalı, soğanlı, domatesli ve baharatlı harç konularak hazırlanır. Yufkalar önce tavada hafifçe pişirilip, üzerine hazırlanan iç harcı dökme usulü serilir ve sonrasında fırında pişirilir. Hem lezzetli hem doyurucu olan bu yemek, genellikle akşam yemeklerinde tercih edilir."
               },
@@ -797,12 +798,12 @@
               {
                   "id": 68,
                   "name": "Hamsi Tava",
-                  "region": "Karadeniz",
+                  "region": "Karadeniz Bölgesi",
                   "category": "Yemekler",
                    "ingredients": [
                               "Hamsi",
                               "Mısır unu",
-                            
+                              "Tuz",
                               "Karabiber",
                               "Sıvı yağ",
                               "Limon"
@@ -819,7 +820,7 @@
                               "Kıyma",
                               "Soğan",
                               "Sarımsak",
-                            
+                              "Tuz",
                               "Karabiber",
                               "Sıvı yağ"
                             ],
@@ -837,9 +838,9 @@
                               "Yumurta",
                               "Kabartma tozu",
                               "Vanilin",
-                              "Peynir",
+                              "Peynir (beyaz peynir veya lor peyniri)",
                               "Toz şeker",
-                              "Ceviz"
+                              "Ceviz (isteğe bağlı)"
                             ],
                         "description": "İzmir Bomba, İzmir'e özgü bir tatlıdır. İnce açılmış hamurun içine beyaz peynir veya lor peyniri konulup, kabartma tozu ve vanilinle lezzetlendirilir. Hamur, tatlı bir şerbetle buluşturulup, kızartılır. Genellikle sıcak servis edilen İzmir Bomba, peynirli iç harcı ve dışındaki çıtırlığı ile oldukça sevilen bir tatlıdır."
                   },
@@ -852,7 +853,7 @@
                               "Un",
                               "Süt",
                               "Şeker",
-                              
+                              "Tuz",
                               "Maya",
                               "Terayağı",
                               "Ceviz"
@@ -870,10 +871,10 @@
                               "Soğan",
                               "Pirinç",
                               "Salça",
-                             
+                              "Baharatlar (kimyon, pul biber, kararbiber)",
                               "Zeytinyağı",
-                              "Sarımsak"
-                              
+                              "Sarımsak",
+                              "Tuz"
                         ],
                         "description": "Mumbar Dolması, Güneydoğu Anadolu'ya özgü geleneksel bir yemektir. Kıyma, pirinç, soğan ve çeşitli baharatlar ile hazırlanan iç harcı, temizlenmiş mumbarın içine doldurularak pişirilir. Mumbarın dışı yumuşak, içi ise baharatlı ve lezzetli bir dolgu ile doludur. Genellikle zeytinyağında pişirilir ve sıcak olarak servis edilir."
                     },
@@ -883,30 +884,31 @@
                         "region": "Güneydoğu Anadolu",
                         "category": "Yemekler",
                         "ingredients": [
-                              "Lavaş",
+                              "Nohut",
+                              "Tortilla ekmeği (veya lavaş)",
                               "Soğan",
                               "Domates",
                               "Limon",
                               "Zeytinyağı",
-                              "Pul biber"
-                             
+                              "Pul biber",
+                              "Tuz"
                             ],
                           "description": "Nohut Dürüm, özellikle vejetaryenler için popüler bir yemektir. Haşlanmış nohutlar, soğan, domates ve baharatlarla karıştırılarak lezzetlendirilir. Bu karışım, yumuşak tortilla ekmeği veya lavaş içine konulup dürüm haline getirilir. Genellikle yanında limon dilimleri ile servis edilir ve pratik bir sokak yemeği olarak tercih edilir."
                       },
                       {
                           "id": 74,
                           "name": "Kelle Paça",
-                          "region": "Doğu Anadolu",
+                          "region": "Genel (Türkiye Geneli)",
                           "category": "Etli Yemekler",
                           "ingredients": [
-                              "Kelle",
-                              "Paça",
+                              "Kelle (baş ve ayak kısmı)",
+                              "Paça (sığır ya da koyun bacağı)",
                               "Soğan",
                               "Sarımsak",
                               "Sirke",
                               "Pul biber",
                               "Nane",
-                            
+                              "Tuz",
                               "Limon"
                             ],
                           "description": "Kelle Paça, Türk mutfağının geleneksel ve yöresel yemeklerinden biridir. Kelle ve paça etleri, soğan, sarımsak ve çeşitli baharatlarla uzun süre pişirilerek yumuşatılır. Genellikle üzerine sirke, pul biber ve nane serpilerek sıcak servis edilir. Kelle Paça, özellikle soğuk kış günlerinde ve etli yemek sevenler için vazgeçilmez bir lezzettir."
@@ -917,15 +919,15 @@
                             "region": "Güneydoğu Anadolu",
                             "category": "Etli Yemekler",
                             "ingredients": [
-                              "Kaburga",
+                              "Kaburga (kuzu veya dana)",
                               "Kıyma",
                               "Pirinç",
                               "Soğan",
                               "Biber",
-                         
+                              "Baharatlar (kimyon, pul biber, kararbiber)",
                               "Zeytinyağı",
                               "Sarımsak",
-                              
+                              "Tuz",
                               "Limon suyu"
                             ],
                             "description": "Kaburga Dolması, özellikle et severlerin tercih ettiği, lezzetli ve zengin bir yemektir. Kuzu veya dana kaburgaları, iç harcı doldurulup fırında veya tencerede pişirilir. İç harç, kıyma, pirinç, soğan, biber ve baharatlarla tatlandırılır. Pişirilen kaburgalar, iç harcıyla birlikte servis edilir ve genellikle yanında pilav veya salata ile sunulur."
@@ -944,8 +946,8 @@
                               "Sarımsak",
                               "Salça",
                               "Zeytinyağı",
-                             
-                              
+                              "Baharatlar (kimyon, pul biber, kararbiber)",
+                              "Tuz",
                               "Sıcak su"
                             ],
                             "description": "Etli Bulgur Pilavı, Türk mutfağının sevilen ve doyurucu yemeklerinden biridir. Bulgur, et veya kıyma ile birlikte pişirilir ve bu karışım, soğan, biber, domates ve baharatlarla zenginleştirilir. Etli Bulgur Pilavı, genellikle yanında yoğurt veya salata ile sıcak olarak servis edilir ve hem pratik hem de besleyici bir yemektir."
@@ -962,9 +964,9 @@
                               "Soğan",
                               "Sarımsak",
                               "Dereotu",
-                              
-                             
-                              "Limon suyu",
+                              "Tuz",
+                              "Karabiber",
+                              "Limon suyu (isteğe bağlı)",
                               "Su"
                             ],
                             "description": "Kabak çiçeği dolması, Ege mutfağının sevilen ve özgün yemeklerinden biridir. Taze kabak çiçeklerinin içi, pirinç, soğan, sarımsak, baharatlar ve zeytinyağı ile doldurularak pişirilir. Genellikle soğuk olarak servis edilir ve lezzetli, hafif bir başlangıç yemeği olarak sunulur. Zeytinyağlı olmasının yanı sıra, içine eklenen dereotu ve baharatlar, yemeğe hoş bir aromatik tat katar. Limon suyu eklenerek asidik bir tat da eklenebilir."
@@ -982,9 +984,9 @@
                               "Soğan",
                               "Sarımsak",
                               "Zeytinyağı",
-                         
-                          
-                              
+                              "Tuz",
+                              "Karabiber",
+                              "Pul biber",
                               "Domates",
                               "Biber"
                             ],
@@ -995,7 +997,7 @@
                           {
                             "id": 79,
                             "name": "Aşure",
-                            "region": "Ege",
+                            "region": "Türkiye Genel",
                             "category": "Tatlılar",
                             "ingredients": [
                               "Buğday",
@@ -1009,7 +1011,7 @@
                               "Tarçın",
                               "Şeker",
                               "Süt",
-                              
+                              "Tuz",
                               "Vanilin",
                               "Portakal kabuğu"
                             ],
@@ -1027,7 +1029,7 @@
                               "Zeytinyağı",
                               "Soğan",
                               "Sarımsak",
-                           
+                              "Tuz",
                               "Karabiber",
                               "Limon suyu",
                               "Dereotu"
@@ -1047,7 +1049,7 @@
                               "Zeytinyağı",
                               "Soğan",
                               "Havuç",
-                              
+                              "Tuz",
                               "Şeker",
                               "Limon suyu",
                               "Dereotu"
@@ -1069,8 +1071,8 @@
                               "Un",
                               "Süt",
                               "Kaşar peyniri",
-                              
-                          
+                              "Tuz",
+                              "Karabiber",
                               "Kekik"
                             ],
                             "description": "Hünkar Beğendi, Osmanlı mutfağının en bilinen yemeklerinden biridir. Genellikle kuzu etiyle yapılan bu yemek, közlenmiş patlıcan beğendisinin üzerine yerleştirilen etle servis edilir. Et, zeytinyağı, soğan, sarımsak ve domatesle pişirilirken, beğendi kısmı için patlıcan, un, süt ve kaşar peyniri kullanılır. Yemeğin ismi, Sultan Abdülaziz'in çok beğenmesinden kaynaklanmaktadır."
