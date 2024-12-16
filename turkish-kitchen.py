@@ -6,11 +6,13 @@ import seaborn as sns
 import plotly.graph_objects as go
 import plotly.io as pio
 import plotly.express as px
+import geopandas as gpd
+from collections import Counter
 
 
 # JSON dosyasını yükleme
 # file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/yemeklerr.json"
-file_path = "/Users/sekerismail/Desktop/Turkish-Kitchen-NetworkX/yeniyemek.json"
+file_path = "C:/Users/Hp/OneDrive/Masaüstü/snaproject/Turkish-Kitchen-NetworkX/dataset.json"
 with open(file_path, "r", encoding="utf-8") as file:
     data = json.load(file)
 
@@ -242,24 +244,84 @@ pos = nx.spring_layout(G, seed=42)
 x_nodes = [pos[n][0] for n in G.nodes]
 y_nodes = [pos[n][1] for n in G.nodes]
 
-# Düğümleri görselleştirme
-pos = nx.spring_layout(G, seed=42)  # Sabit düzen için seed ekledik
-x_nodes = [pos[n][0] for n in G.nodes]
-y_nodes = [pos[n][1] for n in G.nodes]
+# # Düğümleri görselleştirme
+# pos = nx.spring_layout(G, seed=42)  # Sabit düzen için seed ekledik
+# x_nodes = [pos[n][0] for n in G.nodes]
+# y_nodes = [pos[n][1] for n in G.nodes]
 
-fig = go.Figure()
-fig.add_trace(go.Scatter(
-    x=x_nodes, y=y_nodes,
-    mode="markers+text",
-    text=[G.nodes[n]["name"] for n in G.nodes],
-    textposition="top center",
-    marker=dict(size=10, color="blue", opacity=0.8),
-    name="Yemekler"
-))
-pio.renderers.default = "browser"  # Tarayıcıda açar
+# fig = go.Figure()
+# fig.add_trace(go.Scatter(
+#     x=x_nodes, y=y_nodes,
+#     mode="markers+text",
+#     text=[G.nodes[n]["name"] for n in G.nodes],
+#     textposition="top center",
+#     marker=dict(size=10, color="blue", opacity=0.8),
+#     name="Yemekler"
+# ))
+# pio.renderers.default = "browser"  # Tarayıcıda açar
 
-fig.update_layout(title="Türk Mutfağı Yemek Grafiği (Etkileşimli)", showlegend=False)
-fig.show()
+# fig.update_layout(title="Türk Mutfağı Yemek Grafiği (Etkileşimli)", showlegend=False)
+# fig.show()
+
+# Türkiye haritası
+
+file_path = "C:/Users/Hp/OneDrive/Masaüstü/snaproject/Turkish-Kitchen-NetworkX/dataset.json"
+with open(file_path, "r", encoding="utf-8") as file:
+    data2 = json.load(file)
+
+G = nx.Graph()
+
+# Düğümleri ekleme
+for yemek in data2["nodes"]:
+    G.add_node(
+        yemek["id"],  # Düğüm kimliği
+        name=yemek["name"],  # Yemek adı
+        region=yemek["region"],  # Bölge
+        category=yemek["category"],  # Kategori
+        ingredients=yemek["ingredients"]  # Malzemeler
+    )
+
+# Kenarları oluşturma (ortak malzemelere göre bağlama)
+for yemek1 in data2["nodes"]:
+    for yemek2 in data2["nodes"]:
+        if yemek1["id"] != yemek2["id"]:  # Aynı düğümü bağlamayın
+            ortak_malzemeler = set(yemek1["ingredients"]) & set(yemek2["ingredients"])
+            if ortak_malzemeler:  # Ortak malzeme varsa kenar oluştur
+                G.add_edge(yemek1["id"], yemek2["id"], ortak_malzemeler=list(ortak_malzemeler))
+
+# Harita verisini yükle
+file_path = "C:/Users/Hp/OneDrive/Masaüstü/snaproject/Turkish-Kitchen-NetworkX/custom.geo.json"
+turkey_map = gpd.read_file(file_path)
+sns.barplot(x=region_counts.keys(), y=region_counts.values(), palette='viridis', hue=region_counts.keys(), legend=False)
 
 
+# 1. Yemeklerin Bölgelere Göre Sayısını Hesaplama
+region_counts = Counter([yemek["region"] for yemek in data2["nodes"]])
 
+region_df = pd.DataFrame(list(region_counts.items()), columns=['region', 'yemek_sayisi'])
+
+# 2. Harita Üzerinde Yemek Sayısı Verisini Ekleme
+# Türkiye haritasına yemek sayısı verilerini merge edin
+turkey_map = turkey_map.merge(region_df, left_on='name', right_on='region', how='left')
+
+# 3. NaN Değerlerini Doldurma
+turkey_map['yemek_sayisi'] = turkey_map['yemek_sayisi'].fillna(0)  # NaN olanları 0 ile doldur
+
+# 4. Yemek Sayısı Sütununun Veri Tipini Kontrol Etme ve Gerekirse Dönüştürme
+turkey_map['yemek_sayisi'] = pd.to_numeric(turkey_map['yemek_sayisi'], errors='coerce')
+
+# 5. Harita Üzerinde Görselleştirme
+fig, ax = plt.subplots(1, 1, figsize=(12, 12))
+
+# Harita sınırlarını çizin
+turkey_map.boundary.plot(ax=ax, linewidth=1)
+
+# Yemek sayısına göre bölgeleri renkli gösterin
+turkey_map.plot(column='yemek_sayisi', ax=ax, legend=True,
+               legend_kwds={'label': "Yemek Sayısı",
+                            'orientation': "horizontal"},
+               cmap='OrRd')  # OrRd renk paleti
+
+# Başlık ekleyin
+plt.title("Türkiye Bölgelerinde Yemek Dağılımı")
+plt.show()
