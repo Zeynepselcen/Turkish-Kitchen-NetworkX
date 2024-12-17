@@ -12,7 +12,7 @@ from collections import Counter
 
 # JSON dosyasını yükleme
 # file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/yemeklerr.json"
-file_path = "C:/Users/Hp/OneDrive/Masaüstü/snaproject/Turkish-Kitchen-NetworkX/dataset.json"
+file_path = "/Users/yusufkaya/Desktop/SNA-project/Turkish-Kitchen-NetworkX/dataset.json"
 with open(file_path, "r", encoding="utf-8") as file:
     data = json.load(file)
 
@@ -73,21 +73,45 @@ for node, degree in top_5_nodes:
 pos = nx.spring_layout(G, seed=42)
 
 
+edge_x = []
+edge_y = []
+for edge in G.edges():
+    x0, y0 = pos[edge[0]]
+    x1, y1 = pos[edge[1]]
+    edge_x.extend([x0, x1, None])
+    edge_y.extend([y0, y1, None])
+
+node_x = []
+node_y = []
+node_text = []
+for node in G.nodes(data=True):
+    x, y = pos[node[0]]
+    node_x.append(x)
+    node_y.append(y)
+    node_text.append(node[1]['name'])
+
+fig = go.Figure(data=[go.Scatter(x=edge_x, y=edge_y, mode='lines', line=dict(width=1, color='gray')),
+                      go.Scatter(x=node_x, y=node_y, mode='markers+text',
+                                 text=node_text, textposition="top center",
+                                 marker=dict(size=10, color='lightgreen'))])
+fig.update_layout(title="Türk Mutfağı Yemek Ağı", showlegend=False, hovermode='closest')
+fig.show()
+
 # Grafiği görselleştirme
-plt.figure(figsize=(12, 12))
-nx.draw(
-    G,
-    pos=pos,
-    with_labels=True,
-    node_size=3000,
-    font_size=10,
-    node_color="lightgreen",
-    font_weight="bold",
-    edge_color="gray",
-    alpha=0.8
-)
-plt.title("Türk Mutfağı Yemek Grafiği")
-plt.show()
+# plt.figure(figsize=(12, 12))
+# nx.draw(
+#     G,
+#     pos=pos,
+#     with_labels=True,
+#     node_size=3000,
+#     font_size=10,
+#     node_color="lightgreen",
+#     font_weight="bold",
+#     edge_color="gray",
+#     alpha=0.8,
+# )
+# plt.title("Türk Mutfağı Yemek Grafiği")
+# plt.show()
 
 # DERECE DAGİLİMİ NE ISE YARAR
 # Ne İşe Yarar?: Yemeklerin komşu sayılarının (derece) dağılımını görürsünüz. Hangi yemeklerin daha merkezi olduğunu veya popüler olduğunu anlamak için kullanılabilir.
@@ -325,3 +349,5 @@ turkey_map.plot(column='yemek_sayisi', ax=ax, legend=True,
 # Başlık ekleyin
 plt.title("Türkiye Bölgelerinde Yemek Dağılımı")
 plt.show()
+
+
