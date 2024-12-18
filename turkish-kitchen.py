@@ -12,9 +12,10 @@ from collections import Counter
 
 
 # JSON dosyasını yükleme
-# file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/dataset.json" , ismail's pc directory
+# file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/dataset.json" #
 # file_path = "/Users/yusufkaya/Desktop/SNA-project/Turkish-Kitchen-NetworkX/dataset.json" , yusuf's pc directory
-file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/dataset.json"
+# file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/dataset.json"
+file_path = "/Users/sekerismail/Desktop/Turkish-Kitchen-NetworkX/dataset.json" # ismail's path
 with open(file_path, "r", encoding="utf-8") as file:
     data = json.load(file)
 
@@ -217,7 +218,6 @@ plt.show()
 
 
 
-
 # Düğüm ve kenar koordinatları
 pos = nx.spring_layout(G, seed=42)  # Sabit düzen için seed ekledik
 x_nodes = [pos[n][0] for n in G.nodes]  # Düğüm X koordinatları
@@ -280,6 +280,7 @@ fig.update_layout(
     xaxis=dict(showgrid=False, zeroline=False),
     yaxis=dict(showgrid=False, zeroline=False),
 )
+pio.renderers.default = "browser"
 fig.show()
 
 file_path = "/Users/sekerismail/Desktop/Turkish-Kitchen-NetworkX/dataset.json"
@@ -343,6 +344,23 @@ turkey_map.plot(column='yemek_sayisi', ax=ax, legend=True,
 plt.title("Türkiye Bölgelerinde Yemek Dağılımı")
 plt.show()
 
+import community as community_louvain
+# Bir ağ (graph) oluşturun
+G = nx.erdos_renyi_graph(100, 0.1)
+# Louvain algoritması ile toplulukları tespit et
+partition = community_louvain.best_partition(G)
+
+# Sonuçları yazdıralım
+print(partition)
+# Toplulukları görselleştirelim
+import matplotlib.pyplot as plt
+# Her topluluğa farklı renk ver
+colors = [partition[node] for node in G.nodes]
+# Görselleştirme
+plt.figure(figsize=(10, 7))
+nx.draw(G, node_color=colors, with_labels=True, cmap=plt.cm.jet)
+plt.title("Louvain Algoritması ile Topluluk Tespiti", fontsize=16)
+plt.show()
 
 
 
