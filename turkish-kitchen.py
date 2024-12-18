@@ -12,7 +12,8 @@ from collections import Counter
 
 # JSON dosyasını yükleme
 # file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/yemeklerr.json"
-file_path = "/Users/yusufkaya/Desktop/SNA-project/Turkish-Kitchen-NetworkX/dataset.json"
+# file_path = "/Users/yusufkaya/Desktop/SNA-project/Turkish-Kitchen-NetworkX/dataset.json"
+file_path = "/Users/sekerismail/Desktop/Turkish-Kitchen-NetworkX/dataset.json"
 with open(file_path, "r", encoding="utf-8") as file:
     data = json.load(file)
 
@@ -113,6 +114,12 @@ fig.show()
 # plt.title("Türk Mutfağı Yemek Grafiği")
 # plt.show()
 
+# kenar sayısını bulma
+num_edges = G.number_of_edges()
+print(f"Ağdaki kenar sayısı: {num_edges}")
+# node sayısını bulma 
+num_nodes = G.number_of_nodes()
+print(f"Ağdaki düğüm sayısı: {num_nodes}")
 # DERECE DAGİLİMİ NE ISE YARAR
 # Ne İşe Yarar?: Yemeklerin komşu sayılarının (derece) dağılımını görürsünüz. Hangi yemeklerin daha merkezi olduğunu veya popüler olduğunu anlamak için kullanılabilir.
 degrees = [degree for _, degree in G.degree()]
@@ -207,7 +214,6 @@ for u, v, p in jaccard_coefficient(G, [(y1, y2) for y1 in G.nodes for y2 in G.no
     yemek1_name = G.nodes[u]["name"]
     yemek2_name = G.nodes[v]["name"]
     jaccard_scores.append(p)
-
     
     print(f"Yemek {yemek1_name} ile Yemek {yemek2_name} arasındaki Jaccard Skoru: {p:.2f}")
 plt.figure(figsize=(10, 6))
@@ -263,12 +269,12 @@ plt.ylabel("Malzeme", fontsize=14)
 plt.grid(axis="x", linestyle="--", alpha=0.7)
 plt.show()
 
-# Düğüm ve kenar koordinatları
-pos = nx.spring_layout(G, seed=42)
-x_nodes = [pos[n][0] for n in G.nodes]
-y_nodes = [pos[n][1] for n in G.nodes]
+# # Düğüm ve kenar koordinatları
+# pos = nx.spring_layout(G, seed=42)
+# x_nodes = [pos[n][0] for n in G.nodes]
+# y_nodes = [pos[n][1] for n in G.nodes]
 
-# # Düğümleri görselleştirme
+# # # Düğümleri görselleştirme
 # pos = nx.spring_layout(G, seed=42)  # Sabit düzen için seed ekledik
 # x_nodes = [pos[n][0] for n in G.nodes]
 # y_nodes = [pos[n][1] for n in G.nodes]
@@ -287,9 +293,65 @@ y_nodes = [pos[n][1] for n in G.nodes]
 # fig.update_layout(title="Türk Mutfağı Yemek Grafiği (Etkileşimli)", showlegend=False)
 # fig.show()
 
+# ---------------------
+
+# Düğüm ve kenar koordinatları
+pos = nx.spring_layout(G, seed=42)  # Sabit düzen için seed ekledik
+x_nodes = [pos[n][0] for n in G.nodes]  # Düğüm X koordinatları
+y_nodes = [pos[n][1] for n in G.nodes]  # Düğüm Y koordinatları
+
+# Kenar koordinatlarını al
+edge_x = []  # Kenar X koordinatları
+edge_y = []  # Kenar Y koordinatları
+edge_texts = []  # Kenar üzerindeki ortak malzeme etiketleri
+
+for edge in G.edges(data=True):
+    x0, y0 = pos[edge[0]]  # İlk düğümün koordinatları
+    x1, y1 = pos[edge[1]]  # İkinci düğümün koordinatları
+    edge_x += [x0, x1, None]  # Çizgi koordinatları (x)
+    edge_y += [y0, y1, None]  # Çizgi koordinatları (y)
+
+    # Ortak malzemeleri etiket olarak ekle
+    ortak_malzemeler = ", ".join(edge[2].get("ortak_malzemeler", []))  # Ortak malzemeler
+    edge_texts.append(ortak_malzemeler)
+
+# Kenarları görselleştirme
+edge_trace = go.Scatter(
+    x=edge_x,
+    y=edge_y,
+    line=dict(width=1, color="gray"),  # Kenarların rengi ve genişliği
+    hoverinfo="text",  # Hoverda bilgi göster
+    mode="lines",  # Çizgi modu
+    # text=edge_texts,  # Hover metni: Ortak malzemeler
+    text=[f"Ortak Malzemeler: {malzeme}" for malzeme in edge_texts],
+    name="Ortak Malzemeler"
+)
+
+# Düğümleri görselleştirme
+node_trace = go.Scatter(
+    x=x_nodes,
+    y=y_nodes,
+    mode="markers+text",
+    text=[G.nodes[n]["name"] for n in G.nodes],  # Düğüm isimleri
+    textposition="top center",  # İsimlerin pozisyonu
+    marker=dict(size=10, color="blue", opacity=0.8),  # Düğüm renk ve boyutu
+    name="Yemekler"
+)
+
+# Haritayı görselleştirme
+fig = go.Figure(data=[edge_trace, node_trace])
+fig.update_layout(
+    title="Türk Mutfağı Yemek Grafiği (Etkileşimli)",
+    showlegend=False,
+    xaxis=dict(showgrid=False, zeroline=False),
+    yaxis=dict(showgrid=False, zeroline=False),
+)
+fig.show()
+# ---------------
+
 # Türkiye haritası
 
-file_path = "C:/Users/Hp/OneDrive/Masaüstü/snaproject/Turkish-Kitchen-NetworkX/dataset.json"
+file_path = "/Users/sekerismail/Desktop/Turkish-Kitchen-NetworkX/dataset.json"
 with open(file_path, "r", encoding="utf-8") as file:
     data2 = json.load(file)
 
@@ -314,7 +376,7 @@ for yemek1 in data2["nodes"]:
                 G.add_edge(yemek1["id"], yemek2["id"], ortak_malzemeler=list(ortak_malzemeler))
 
 # Harita verisini yükle
-file_path = "C:/Users/Hp/OneDrive/Masaüstü/snaproject/Turkish-Kitchen-NetworkX/custom.geo.json"
+file_path = "/Users/sekerismail/Desktop/Turkish-Kitchen-NetworkX/custom.geo.json"
 turkey_map = gpd.read_file(file_path)
 sns.barplot(x=region_counts.keys(), y=region_counts.values(), palette='viridis', hue=region_counts.keys(), legend=False)
 
@@ -349,5 +411,31 @@ turkey_map.plot(column='yemek_sayisi', ax=ax, legend=True,
 # Başlık ekleyin
 plt.title("Türkiye Bölgelerinde Yemek Dağılımı")
 plt.show()
+
+import networkx as nx
+import community as community_louvain
+
+# Bir ağ (graph) oluşturun
+G = nx.erdos_renyi_graph(100, 0.1)
+
+# Louvain algoritması ile toplulukları tespit et
+partition = community_louvain.best_partition(G)
+
+# Sonuçları yazdıralım
+print(partition)
+
+# Toplulukları görselleştirelim
+import matplotlib.pyplot as plt
+
+# Her topluluğa farklı renk ver
+colors = [partition[node] for node in G.nodes]
+
+# Görselleştirme
+plt.figure(figsize=(10, 7))
+nx.draw(G, node_color=colors, with_labels=True, cmap=plt.cm.jet)
+plt.title("Louvain Algoritması ile Topluluk Tespiti", fontsize=16)
+plt.show()
+
+
 
 
