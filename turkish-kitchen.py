@@ -10,10 +10,11 @@ import geopandas as gpd
 from collections import Counter
 
 
+
 # JSON dosyasını yükleme
-# file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/yemeklerr.json"
-# file_path = "/Users/yusufkaya/Desktop/SNA-project/Turkish-Kitchen-NetworkX/dataset.json"
-file_path = "/Users/sekerismail/Desktop/Turkish-Kitchen-NetworkX/dataset.json"
+# file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/dataset.json" , ismail's pc directory
+# file_path = "/Users/yusufkaya/Desktop/SNA-project/Turkish-Kitchen-NetworkX/dataset.json" , yusuf's pc directory
+file_path = "C:/Users/Lenovo/Desktop/SNA/Turkish-Kitchen-NetworkX/dataset.json"
 with open(file_path, "r", encoding="utf-8") as file:
     data = json.load(file)
 
@@ -73,55 +74,13 @@ for node, degree in top_5_nodes:
 
 pos = nx.spring_layout(G, seed=42)
 
-
-edge_x = []
-edge_y = []
-for edge in G.edges():
-    x0, y0 = pos[edge[0]]
-    x1, y1 = pos[edge[1]]
-    edge_x.extend([x0, x1, None])
-    edge_y.extend([y0, y1, None])
-
-node_x = []
-node_y = []
-node_text = []
-for node in G.nodes(data=True):
-    x, y = pos[node[0]]
-    node_x.append(x)
-    node_y.append(y)
-    node_text.append(node[1]['name'])
-
-fig = go.Figure(data=[go.Scatter(x=edge_x, y=edge_y, mode='lines', line=dict(width=1, color='gray')),
-                      go.Scatter(x=node_x, y=node_y, mode='markers+text',
-                                 text=node_text, textposition="top center",
-                                 marker=dict(size=10, color='lightgreen'))])
-fig.update_layout(title="Türk Mutfağı Yemek Ağı", showlegend=False, hovermode='closest')
-fig.show()
-
-# Grafiği görselleştirme
-# plt.figure(figsize=(12, 12))
-# nx.draw(
-#     G,
-#     pos=pos,
-#     with_labels=True,
-#     node_size=3000,
-#     font_size=10,
-#     node_color="lightgreen",
-#     font_weight="bold",
-#     edge_color="gray",
-#     alpha=0.8,
-# )
-# plt.title("Türk Mutfağı Yemek Grafiği")
-# plt.show()
-
 # kenar sayısını bulma
 num_edges = G.number_of_edges()
 print(f"Ağdaki kenar sayısı: {num_edges}")
 # node sayısını bulma 
 num_nodes = G.number_of_nodes()
 print(f"Ağdaki düğüm sayısı: {num_nodes}")
-# DERECE DAGİLİMİ NE ISE YARAR
-# Ne İşe Yarar?: Yemeklerin komşu sayılarının (derece) dağılımını görürsünüz. Hangi yemeklerin daha merkezi olduğunu veya popüler olduğunu anlamak için kullanılabilir.
+# dereceler
 degrees = [degree for _, degree in G.degree()]
 plt.hist(degrees, bins=range(1, max(degrees) + 2), align='left', color='skyblue', edgecolor='black')
 plt.title("Düğüm Dereceleri Dağılımı")
@@ -130,8 +89,6 @@ plt.ylabel("Düğüm Sayısı")
 plt.show()
 
 # Kümeleme Katsayısı (Clustering Coefficient)
-# Ne İşe Yarar?: Her yemeğin, komşuları arasındaki bağlantıların ne kadar yoğun olduğunu gösterir. Komşu yemeklerin ne kadar birbirine benzediğini anlamak için kullanılabilir.
-
 clustering = nx.clustering(G)  # Her düğüm için kümeleme katsayısı
 average_clustering = nx.average_clustering(G)  # Tüm grafın ortalama kümeleme katsayısı
 print(f"Ortalama Kümeleme Katsayısı: {average_clustering}")
@@ -142,7 +99,6 @@ print("En yüksek kümeleme katsayısına sahip düğümler:")
 for node, coef in top_clustering:
     print(f"Yemek ID: {node}, Adı: {G.nodes[node]['name']}, Kümeleme Katsayısı: {coef}")
 # Bağlantı Bileşenleri (Connected Components)
-# Ne İşe Yarar?: Grafın ayrık (bağımsız) parçalarını bulur. Yemekler arasında bağlantısı olmayan alt grupları analiz etmek için kullanılabilir.
 components = list(nx.connected_components(G))
 print(f"Graf, {len(components)} farklı bağlantılı bileşene sahiptir.")
 
@@ -150,9 +106,7 @@ print(f"Graf, {len(components)} farklı bağlantılı bileşene sahiptir.")
 for i, component in enumerate(components):
     print(f"Bileşen {i + 1}: {component}")
 # Merkezilik Ölçümleri (Centrality Measures)
-# Ne İşe Yarar?: Hangi yemeklerin grafikte daha merkezi bir rol oynadığını bulur. Daha fazla bağlantıya sahip veya stratejik pozisyondaki yemekleri belirlemek için kullanılabilir.
 # Derece Merkeziliği (Degree Centrality)
-
 degree_centrality = nx.degree_centrality(G)
 top_degree = sorted(degree_centrality.items(), key=lambda x: x[1], reverse=True)[:5]
 print("Derece merkeziliği en yüksek 5 düğüm:")
@@ -160,7 +114,6 @@ for node, centrality in top_degree:
     print(f"Yemek ID: {node}, Adı: {G.nodes[node]['name']}, Derece Merkeziliği: {centrality}")
 
 # Betweenness Merkeziliği (Betweenness Centrality)
-
 betweenness = nx.betweenness_centrality(G)
 top_betweenness = sorted(betweenness.items(), key=lambda x: x[1], reverse=True)[:5]
 print("Betweenness merkeziliği en yüksek 5 düğüm:")
@@ -168,8 +121,7 @@ for node, centrality in top_betweenness:
     print(f"Yemek ID: {node}, Adı: {G.nodes[node]['name']}, Betweenness Merkeziliği: {centrality}")
 
 # Shortest Path
-# Ne İşe Yarar?: İki yemek arasındaki bağlantıların en kısa yolunu bulur. Yemekler arasında hangi malzemelerin köprü rolü oynadığını anlamak için kullanılabilir.
-
+#örnek
 source = 1  # Kaynak düğüm ID'si
 target = 36  # Hedef düğüm ID'si
 if nx.has_path(G, source, target):
@@ -179,8 +131,6 @@ else:
     print(f"{source} ve {target} arasında yol yok.")
 
 # Çap (Diameter)
-# Ne İşe Yarar?: Grafın en uzak iki düğümü arasındaki yol uzunluğunu bulur. Grafın "genişliğini" anlamak için kullanılır.
-
 if nx.is_connected(G):
     diameter = nx.diameter(G)
     print(f"Grafın çapı (en uzun en kısa yol): {diameter}")
@@ -188,10 +138,9 @@ else:
     print("Graf bağlantılı değil, çap hesaplanamaz.")
 
 # Topluluk Algılama (Community Detection)
-# Ne İşe Yarar?: Grafı benzer özelliklere sahip alt gruplara (topluluklara) böler. Yemeklerin benzer malzemelere göre hangi topluluklarda gruplaştığını görmek için kullanılabilir.
 # Girvan-Newman Algorithm
-
 from networkx.algorithms.community import girvan_newman
+import community as community_louvain
 
 communities = next(girvan_newman(G))  # İlk topluluk bölünmesini al
 for i, community in enumerate(communities):
@@ -199,14 +148,11 @@ for i, community in enumerate(communities):
     community_names = [G.nodes[node]["name"] for node in community]
     print(f"Topluluk {i + 1}: {sorted(community_names)}")
 
-# Yoğunluk (Density)
-# Ne İşe Yarar?: Grafın ne kadar yoğun bağlantıya sahip olduğunu ölçer. Yemeklerin birbirine ne kadar bağlı olduğunu anlamak için kullanılabilir.
 
+# Yoğunluk (Density)
 density = nx.density(G)
 print(f"Grafın yoğunluğu: {density}")
 # Yemekler Arası Benzerlik Skoru
-# Ne yapar?: Yemekler arasındaki benzerliği, kullanılan malzemelere göre bir "skor" ile ifade edebilirsiniz. Örneğin, iki yemek ne kadar fazla ortak malzeme içeriyorsa, aralarındaki skor o kadar yüksek olabilir.
-
 from networkx.algorithms.link_prediction import jaccard_coefficient
 # Jaccard skorlarını hesaplama
 jaccard_scores = []
@@ -269,31 +215,8 @@ plt.ylabel("Malzeme", fontsize=14)
 plt.grid(axis="x", linestyle="--", alpha=0.7)
 plt.show()
 
-# # Düğüm ve kenar koordinatları
-# pos = nx.spring_layout(G, seed=42)
-# x_nodes = [pos[n][0] for n in G.nodes]
-# y_nodes = [pos[n][1] for n in G.nodes]
 
-# # # Düğümleri görselleştirme
-# pos = nx.spring_layout(G, seed=42)  # Sabit düzen için seed ekledik
-# x_nodes = [pos[n][0] for n in G.nodes]
-# y_nodes = [pos[n][1] for n in G.nodes]
 
-# fig = go.Figure()
-# fig.add_trace(go.Scatter(
-#     x=x_nodes, y=y_nodes,
-#     mode="markers+text",
-#     text=[G.nodes[n]["name"] for n in G.nodes],
-#     textposition="top center",
-#     marker=dict(size=10, color="blue", opacity=0.8),
-#     name="Yemekler"
-# ))
-# pio.renderers.default = "browser"  # Tarayıcıda açar
-
-# fig.update_layout(title="Türk Mutfağı Yemek Grafiği (Etkileşimli)", showlegend=False)
-# fig.show()
-
-# ---------------------
 
 # Düğüm ve kenar koordinatları
 pos = nx.spring_layout(G, seed=42)  # Sabit düzen için seed ekledik
@@ -326,7 +249,6 @@ edge_trace = go.Scatter(
     text=[f"Ortak Malzemeler: {malzeme}" for malzeme in edge_texts],
     name="Ortak Malzemeler"
 )
-
 # Düğümleri görselleştirme
 node_trace = go.Scatter(
     x=x_nodes,
@@ -335,21 +257,30 @@ node_trace = go.Scatter(
     text=[G.nodes[n]["name"] for n in G.nodes],  # Düğüm isimleri
     textposition="top center",  # İsimlerin pozisyonu
     marker=dict(size=10, color="blue", opacity=0.8),  # Düğüm renk ve boyutu
-    name="Yemekler"
+    name="Yemekler",
+    hovertext=[  # Hover metni: Ortak malzemeler
+        f"{G.nodes[node]['name']}<br>Kullandığı Malzemeler: " + 
+        ", ".join(
+            set(
+                material
+                for edge in G.edges(node, data=True)
+                for material in edge[2].get("ortak_malzemeler", [])
+            )
+        )
+        for node in G.nodes
+    ], 
+    hoverinfo="text",  # Hoverda sadece metin göster
 )
 
 # Haritayı görselleştirme
 fig = go.Figure(data=[edge_trace, node_trace])
 fig.update_layout(
-    title="Türk Mutfağı Yemek Grafiği (Etkileşimli)",
+    title="Türk Mutfağı Yemek Grafı",
     showlegend=False,
     xaxis=dict(showgrid=False, zeroline=False),
     yaxis=dict(showgrid=False, zeroline=False),
 )
 fig.show()
-# ---------------
-
-# Türkiye haritası
 
 file_path = "/Users/sekerismail/Desktop/Turkish-Kitchen-NetworkX/dataset.json"
 with open(file_path, "r", encoding="utf-8") as file:
@@ -408,33 +339,11 @@ turkey_map.plot(column='yemek_sayisi', ax=ax, legend=True,
                             'orientation': "horizontal"},
                cmap='OrRd')  # OrRd renk paleti
 
-# Başlık ekleyin
+# Başlık ekleyin    
 plt.title("Türkiye Bölgelerinde Yemek Dağılımı")
 plt.show()
 
-import networkx as nx
-import community as community_louvain
 
-# Bir ağ (graph) oluşturun
-G = nx.erdos_renyi_graph(100, 0.1)
-
-# Louvain algoritması ile toplulukları tespit et
-partition = community_louvain.best_partition(G)
-
-# Sonuçları yazdıralım
-print(partition)
-
-# Toplulukları görselleştirelim
-import matplotlib.pyplot as plt
-
-# Her topluluğa farklı renk ver
-colors = [partition[node] for node in G.nodes]
-
-# Görselleştirme
-plt.figure(figsize=(10, 7))
-nx.draw(G, node_color=colors, with_labels=True, cmap=plt.cm.jet)
-plt.title("Louvain Algoritması ile Topluluk Tespiti", fontsize=16)
-plt.show()
 
 
 
